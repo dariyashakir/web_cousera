@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale="1.0>
+    <title>To do list</title>
+    <style type="text/css">
+    
+        body {
+            text-align: center;
+            margin: 10;
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 16px;
+            background-color: rgb(239, 212, 233);
+        }
+        input {
+            display: inline-block;
+            margin: 20px auto;
+            border: 2px solid #a76767;
+            border-radius: 7px;
+            padding: 10px 20px;
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 16px;
+            text-decoration-color: rgb(103, 3, 3);
+            background: rgb(243, 214, 237);
+        }
+        ul li:nth-child(odd) {
+            background: rgb(234, 191, 226);
+        }
+        .tdItem {
+            text-align: left;
+            padding: 10px;
+            cursor: default;
+            border-radius: 7px;
+            color: rgb(103, 3, 3);
+        }
+        .tdItem:hover {
+            background-color: rgb(178, 110, 167);
+        }
+        ::placeholder {
+            color: rgba(103, 3, 3, 0.371);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="width: 400px; margin: auto;">
+        <h2 class="todo__caption" style="color: indianred; font-family: cursive; font-size: xx-large;" >🌸My tasks list🌸</h2>
+        <div id="tdlApp">
+            <input type="text" class="form-control" placeholder="Enter your new task" style="color: rgb(103, 3, 3);">
+            <div class="tdlDiv">
+                <ul class="List list-unstyled">
+                </ul>
+            </div>
+        </div>
+    </div> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+        </script>
+        <script>
+            var List = $('#tdlApp ul');
+            var Mask = 'tdl_';
+            function show_tasks() {
+                var Storage_size = localStorage.length;
+                if (Storage_size > 0) {
+                    for (var i = 0; i < Storage_size; i++) {
+                        var key = localStorage.key(i);
+                        if (key.indexOf(Mask) == 0) {
+                        $('<li></li>').addClass('tdItem')
+                        .attr('data-itemid', key)
+                        .text(localStorage.getItem(key))
+                        .appendTo(List);
+                        }
+                    }
+                }
+            }
+        show_tasks();
+        $('#tdlApp input').on('keydown', function (e) {
+            if (e.keyCode != 13) return;
+            var str = e.target.value;
+            e.target.value = "";
+            if (str.length > 0) {
+                var number_Id = 0;
+                List.children().each(function (index, el) {
+                    var element_Id = $(el).attr('data-itemid').slice(4);
+                    if (element_Id > number_Id)
+                        number_Id = element_Id;
+                })
+                number_Id++;
+                localStorage.setItem(Mask + number_Id, str);
+                $('<li></li>').addClass('tdItem')
+                .attr('data-itemid', Mask + number_Id)
+                .text(str).appendTo(List);
+            }
+        });
+        $(document).on('click', '.tdItem', function (e) {
+            var jet = $(e.target);
+            localStorage.removeItem(jet.attr('data-itemid'));
+            jet.remove();
+        })
+    </script>
+</body>
+</html>
