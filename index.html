@@ -1,0 +1,134 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0"> 
+    <title>Главная страница</title> 
+    <link rel="stylesheet" href="./style.css"/> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+</head> 
+<body> 
+    <header> 
+        <nav> 
+            <a href="#"><img src="images/logo.jpeg" alt="Logo image"></a> 
+            <div class="nav-links"> 
+                <ul> 
+                    <li><a href="#">Home</a></li> 
+                    <li><a href="#">Course</a></li> 
+                    <li><a href="#">Reviews</a></li> 
+                    <li><a href="#">Contact</a></li> 
+                </ul> 
+            </div> 
+        </nav> 
+        <div class="textbook"> 
+            <h1>The World's Widest Mountain</h1> 
+            <p>Join our climbing group and stay at our camp!</p>
+            <a href="#" class="btn">KNOW MORE</a> 
+        </div> 
+    </header> 
+    <content> 
+        <section class="course"> 
+            <h1>Choose type of tour and stay option</h1> 
+            <div class="row"> 
+                <div class="course-col"> 
+                    <h3>One-day climb</h3> 
+                    <p>without stay at night</p> 
+                    <p>lunchbreaks and the guide is not provided</p> 
+                </div> 
+                <div class="course-col"> 
+                    <h3>Two-day climb</h3> 
+                    <p>with a stay at night in tents</p> 
+                    <p>lunchbreaks and the guide is provided</p> 
+                </div> 
+                <div class="course-col"> 
+                    <h3>Three-day climb</h3> 
+                    <p>with a stay for two nights in private cabins </p> 
+                    <p>lunchbreaks and the guide is provided</p> 
+                </div> 
+            </div> 
+        </section> 
+    </content> 
+    <br><br><br><br><br>
+    <section class="accommodation"> 
+        <h1>Accommodation</h1> 
+        <p>We provide multiple types of housings.</p> 
+        <div class="row"> 
+            <div class="gyms-col"> 
+                <img src="./images/tent.jpeg" alt=""> 
+                <div class="label"> 
+                    <h3>Modern Tents</h3> 
+                </div> 
+            </div> 
+            <div class="gyms-col"> 
+                <img src="./images/cabin3.jpeg" alt=""> 
+                <div class="label"> 
+                    <h3>Private Cabins</h3> 
+                </div> 
+            </div> 
+            <div class="gyms-col"> 
+                <img src="./images/bigcot.jpeg"> 
+                <div class="label"> 
+                    <h3>Cottage with 6 bedrooms</h3> 
+                </div> 
+            </div> 
+        </div> 
+    </section> 
+    <section class="testimonials">
+        <h1>What Our Guests Say</h1>
+        <div class="row">
+            <div class="testi-col">
+                <img src="./images/person.webp" alt="">
+                <div>
+                    <h3>Christine Berkley</h3>
+                    <p>For the first time I went up the mountain and I am very glad that I trusted you!</p>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+            </div>
+            <div class="testi-col">
+                <img src="./images/person.webp" alt="">
+                <div>
+                    <h3>David Byer</h3>
+                    <p>Interesting tour with experinced guide. I really like the accomodation choices, even staying at tents is quite good</p>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta"> 
+        <h1>Sign up for the tour right now</h1>
+        <a href="#" class="btn">CONTACT US</a> 
+    </section> 
+     
+    <footer> 
+        <h4>DISCLAIMER</h4> 
+        <p>We do not take responsibility in case of violation of the Safety Rules by the participants</p> 
+        <div class="icons"> 
+            <i class="fa fa-facebook" aria-hidden="true"></i> 
+            <i class="fa fa-twitter" aria-hidden="true"></i> 
+            <i class="fa fa-instagram" aria-hidden="true"></i> 
+            <i class="fa fa-linkedin" aria-hidden="true"></i> 
+        </div> 
+    </footer> 
+    <script> 
+        var navLinks = document.getElementById("navLinks"); 
+ 
+        function showMenu(){ 
+            navLinks.style.right = "0"; 
+        } 
+        function hideMenu(){ 
+            navLinks.style.right = "-200px"; 
+        } 
+    </script> 
+</body> 
+</html>
